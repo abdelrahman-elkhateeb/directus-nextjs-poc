@@ -1,0 +1,34 @@
+# Node.js
+node_modules/
+
+# Next.js
+.next/
+out/
+
+# Environment variables
+.env
+.env.local
+
+# Logs
+*.log
+
+# macOS
+.DS_Store
+
+# VS Code
+.vscode/
+
+# Directus database files
+cms/database/
+
+# Directus uploads
+cms/uploads/
+
+# Directus extensions build files
+cms/extensions/
+
+# Docker
+docker-data/
+
+# OS
+Thumbs.db
