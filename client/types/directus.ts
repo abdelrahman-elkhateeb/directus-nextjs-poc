@@ -15,8 +15,13 @@ export interface MenuItem {
   image: string | null;
   available: boolean;
   featured: boolean | null;
+
   category: number | Category;
 }
+
+export type MenuItemCardData = Omit<MenuItem, "category"> & {
+  category: Pick<Category, "id" | "name" | "slug">;
+};
 
 export interface Offer {
   id: number;
@@ -40,7 +45,6 @@ export interface FeaturedMenuItem {
   price: number;
   image: string | null;
 }
-
 const directusUrl = process.env.NEXT_PUBLIC_DIRECTUS_URL;
 
 if (!directusUrl) {

@@ -1,5 +1,5 @@
 import { directus } from "@/types/directus";
-import { readItems } from "@directus/sdk";
+import { readItem, readItems } from "@directus/sdk";
 
 export async function getCategories() {
   return directus.request(
@@ -48,3 +48,40 @@ export async function getActiveOffers() {
   );
 }
 
+export async function getMenuItems() {
+  return directus.request(
+    readItems("menu_items", {
+      fields: [
+        "id",
+        "name",
+        "description",
+        "price",
+        "image",
+        "available",
+        "featured",
+        {
+          category: ["id", "name", "slug"],
+        },
+      ],
+    }),
+  );
+}
+
+export async function getMenuItem(id: string) {
+  return directus.request(
+    readItem("menu_items", Number(id), {
+      fields: [
+        "id",
+        "name",
+        "description",
+        "price",
+        "image",
+        "available",
+        "featured",
+        {
+          category: ["id", "name", "slug"],
+        },
+      ],
+    }),
+  );
+}
