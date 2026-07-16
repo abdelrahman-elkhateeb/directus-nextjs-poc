@@ -33,6 +33,14 @@ export interface DirectusSchema {
   offers: Offer[];
 }
 
+export interface FeaturedMenuItem {
+  id: number;
+  name: string;
+  description: string;
+  price: number;
+  image: string | null;
+}
+
 const directusUrl = process.env.NEXT_PUBLIC_DIRECTUS_URL;
 
 if (!directusUrl) {
