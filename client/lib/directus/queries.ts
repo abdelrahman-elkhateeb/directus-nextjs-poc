@@ -28,3 +28,23 @@ export async function getFeaturedMenuItems() {
     }),
   );
 }
+
+export async function getActiveOffers() {
+  return directus.request(
+    readItems("offers", {
+      fields: [
+        "id",
+        "title",
+        "description",
+        "discount_percentage",
+        "image",
+      ],
+      filter: {
+        active: {
+          _eq: true,
+        },
+      },
+    }),
+  );
+}
+

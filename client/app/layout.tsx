@@ -4,6 +4,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 import { cn } from "@/lib/utils";
 import "./globals.css";
 import { Navbar } from "@/components/layout/navbar";
+import { Footer } from "@/components/layout/footer";
 
 const ralewayHeading = Raleway({ subsets: ['latin'], variable: '--font-heading' });
 
@@ -25,11 +26,12 @@ export default function RootLayout({
       suppressHydrationWarning
       className={cn("antialiased", fontMono.variable, "font-sans", inter.variable, ralewayHeading.variable)}
     >
-      <body>
+      <body className="flex flex-col min-h-dvh">
         <Navbar />
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-4 flex-1">
           <ThemeProvider>{children}</ThemeProvider>
         </div>
+        <Footer />
       </body>
     </html>
   )
