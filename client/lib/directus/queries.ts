@@ -85,3 +85,24 @@ export async function getMenuItem(id: string) {
     }),
   );
 }
+
+export async function getOffers() {
+  return directus.request(
+    readItems("offers", {
+      fields: [
+        "id",
+        "title",
+        "description",
+        "discount_percentage",
+        "image",
+        "active",
+      ],
+      filter: {
+        active: {
+          _eq: true,
+        },
+      },
+      sort: ["-discount_percentage"],
+    }),
+  );
+}
