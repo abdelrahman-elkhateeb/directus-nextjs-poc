@@ -9,12 +9,12 @@ export default function WebsiteLayout({
   children,
 }: WebsiteLayoutProps) {
   return (
-    <body className="flex flex-col min-h-dvh" suppressHydrationWarning>
+    <div className="flex min-h-dvh flex-col">
       <Navbar />
       <div className="container mx-auto px-4 flex-1">
         {children}
       </div>
       <Footer />
-    </body>
+    </div>
   );
 }
