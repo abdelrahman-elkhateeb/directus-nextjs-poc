@@ -184,6 +184,8 @@ NEXT_PUBLIC_DIRECTUS_URL=http://localhost:8055
 docker compose up
 ```
 
+For Directus schema versioning and database backup/restore workflow, see [cms/README.md](cms/README.md).
+
 ---
 
 ## Run the frontend

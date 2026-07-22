@@ -1,0 +1,11 @@
+{
+  "name": "directus-cms-workflow",
+  "private": true,
+  "scripts": {
+    "schema:export": "node ./scripts/directus-schema.mjs export",
+    "schema:apply": "node ./scripts/directus-schema.mjs apply",
+    "schema:apply:dry": "node ./scripts/directus-schema.mjs apply --dry-run",
+    "content:backup": "node ./scripts/directus-content.mjs backup",
+    "content:restore": "node ./scripts/directus-content.mjs restore"
+  }
+}

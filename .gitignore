@@ -21,11 +21,12 @@ out/
 # Directus database files
 cms/database/
 
-# Directus uploads
+# Directus uploads (runtime data)
 cms/uploads/
 
-# Directus extensions build files
-cms/extensions/
+# Directus local environment and backups
+cms/.env
+cms/backups/
 
 # Docker
 docker-data/
